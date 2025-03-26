@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
-import { View, Text, StyleSheet } from "react-native";
+import { View, Text } from "react-native";
 import { useFonts } from "expo-font";
+import { SplashStyle } from "../Styles/Styles";
 
 const SplashScreen = () => {
   const [fontsLoaded] = useFonts({
@@ -12,26 +13,10 @@ const SplashScreen = () => {
   }
 
   return (
-    <View style={styles.container}>
-      <Text style={styles.text}>wheeli</Text>
+    <View style={SplashStyle.container}>
+      <Text>sami</Text>
     </View>
   );
 };
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: "center",
-    alignItems: "center",
-  },
-  text: {
-    fontFamily: "cabin-bold",
-    fontSize: 24,
-  },
-  text1: {
-    fontFamily: "cabin-italic",
-    fontSize: 24,
-  },
-});
 
 export default SplashScreen;

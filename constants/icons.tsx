@@ -6,3 +6,4 @@ export { default as Profile } from "../assets/images/profile.svg";
 export { default as Success } from "../assets/images/Succes Icon.svg";
 export { default as ProfileSuccess } from "../assets/images/profile-success.svg";
 export { default as AcceptTerm } from "../assets/images/accept_terms.svg";
+export { default as Logo } from "../assets/images/logo.svg";

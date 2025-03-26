@@ -1,3 +1,4 @@
+import colors from "@/constants/colors";
 import { Stack } from "expo-router";
 
 export default function RootLayout() {
@@ -6,7 +7,7 @@ export default function RootLayout() {
       <Stack.Screen
         name="index"
         options={{
-          statusBarBackgroundColor: "white",
+          statusBarBackgroundColor: colors.primaryColor,
           headerShown: false,
         }}
       />

@@ -17,3 +17,13 @@ export const SplashStyle = StyleSheet.create({
     fontSize: 24,
   },
 });
+
+// define your styles
+export const TutorialStyles = StyleSheet.create({
+  container: {
+    flex: 1,
+    justifyContent: "center",
+    alignItems: "center",
+    backgroundColor: colors.secondaryColor,
+  },
+});

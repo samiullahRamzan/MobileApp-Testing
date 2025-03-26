@@ -1,7 +1,10 @@
 import React, { useState, useEffect } from "react";
-import { View, Text } from "react-native";
+import { View, Text, Pressable } from "react-native";
 import { useFonts } from "expo-font";
 import { SplashStyle } from "../Styles/Styles";
+import Logo from "@/components/Icons/Logo";
+import { Link } from "expo-router";
+import { SafeAreaView } from "react-native-safe-area-context";
 
 const SplashScreen = () => {
   const [fontsLoaded] = useFonts({
@@ -13,9 +16,11 @@ const SplashScreen = () => {
   }
 
   return (
-    <View style={SplashStyle.container}>
-      <Text>sami</Text>
-    </View>
+    <SafeAreaView style={SplashStyle.container}>
+      <Link href={{ pathname: "/tutorial" }}>
+        <Logo />
+      </Link>
+    </SafeAreaView>
   );
 };
 

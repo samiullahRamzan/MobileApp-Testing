@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { View, Text, StyleSheet } from "react-native";
 import { useFonts } from "expo-font";
-import Email from '../assets/images/email.svg'
 
 const SplashScreen = () => {
   const [fontsLoaded] = useFonts({
@@ -15,8 +14,6 @@ const SplashScreen = () => {
   return (
     <View style={styles.container}>
       <Text style={styles.text}>wheeli</Text>
-      <Email width={120} height={100}   />  
-      {/* Add this for proper scaling */}
     </View>
   );
 };

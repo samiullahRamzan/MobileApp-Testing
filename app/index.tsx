@@ -8,8 +8,11 @@ import { SafeAreaView } from "react-native-safe-area-context";
 
 const SplashScreen = () => {
   const [fontsLoaded] = useFonts({
-    "cabin-bold": require("../assets/fonts/Cabin/static/Cabin_Condensed-Bold.ttf"),
-    "cabin-italic": require("../assets/fonts/Cabin/static/Cabin_Condensed-Italic.ttf"),
+    "c-bold": require("../assets/fonts/Cabin/static/Cabin_Condensed-Bold.ttf"),
+    "c-italic": require("../assets/fonts/Cabin/static/Cabin_Condensed-Italic.ttf"),
+    "c-regular": require("../assets/fonts/Cabin/static/Cabin_Condensed-Regular.ttf"),
+    "p-bold": require("../assets/fonts/Plus_Jakarta_Sans/static/PlusJakartaSans-Bold.ttf"),
+    "u-regular": require("../assets/fonts/Urbanist/static/Urbanist-Regular.ttf"),
   });
   if (!fontsLoaded) {
     return undefined;

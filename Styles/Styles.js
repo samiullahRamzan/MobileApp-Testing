@@ -4,10 +4,7 @@ import {
 } from "@/components/ResponsiveWidth_height";
 import colors from "@/constants/colors";
 import { StyleSheet } from "react-native";
-import {
-  RFPercentage,
-  RFValue as size,
-} from "react-native-responsive-fontsize";
+import { RFValue as size } from "react-native-responsive-fontsize";
 
 export const SplashStyle = StyleSheet.create({
   container: {
@@ -32,10 +29,14 @@ export const TutoialStyles = StyleSheet.create({
     position: "absolute",
     bottom: 0,
     width: "100%",
-    padding: "5%",
+    paddingHorizontal: "3%",
+    paddingVertical: "3%",
   },
   outerView: {
     width: Responsive_w(0.9),
+    alignItems: "center",
+    paddingHorizontal: "2%",
+    paddingVertical: "2%",
     justifyContent: "center",
   },
   heading: {
@@ -70,5 +71,34 @@ export const TutoialStyles = StyleSheet.create({
     height: Responsive_h(0.02),
     borderRadius: 86.71,
     backgroundColor: colors.inactiveDot,
+  },
+});
+
+// define your styles
+export const LoginStyles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: "white",
+    paddingHorizontal: "4%",
+  },
+  heading: {
+    marginTop: "15%",
+    fontFamily: "p-bold",
+    fontWeight: 700,
+    fontSize: size(24),
+  },
+  paragraph: {
+    fontFamily: "u-medium",
+    fontWeight: 500,
+    fontSize: 14,
+    marginTop: "2%",
+  },
+  forgot: {
+    fontFamily: "u-semiBold",
+    fontWeight: 600,
+    fontSize: size(14),
+    color: colors.lightBlue,
+    marginTop: "3%",
+    alignSelf: "flex-end",
   },
 });

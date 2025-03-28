@@ -15,33 +15,34 @@ import { useRouter } from "expo-router";
 import { Responsive_w } from "@/components/ResponsiveWidth_height";
 
 const { height: SCREEN_HEIGHT } = Dimensions.get("window");
+const modalHeight = SCREEN_HEIGHT * 0.44;
+
+// content array
+const content = [
+  {
+    id: 0,
+    heading: "Get Instant Help for Your Flat Tyre",
+    paragraph:
+      "Flat tyre? No worries! Just a few taps to call a pro for quick, reliable service, right when you need it!",
+  },
+  {
+    id: 1,
+    heading: "Schedule Your Bike Tuning with Ease",
+    paragraph:
+      "Keep your bike in top shape! Easily schedule tuning through our app—just pick a time, and we’ll handle the rest.",
+  },
+  {
+    id: 2,
+    heading: "Track Your Service in Real Time",
+    paragraph:
+      "Track your expert's arrival in real time with updates at every step for a smooth, stress-free experience.",
+  },
+];
+
 const Tutorial = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const contentPosition = useRef(new Animated.Value(0)).current;
-  const modalHeight = SCREEN_HEIGHT * 0.44;
   const router = useRouter();
-
-  // content array
-  const content = [
-    {
-      id: 0,
-      heading: "Get Instant Help for Your Flat Tyre",
-      paragraph:
-        "Flat tyre? No worries! Just a few taps to call a pro for quick, reliable service, right when you need it!",
-    },
-    {
-      id: 1,
-      heading: "Schedule Your Bike Tuning with Ease",
-      paragraph:
-        "Keep your bike in top shape! Easily schedule tuning through our app—just pick a time, and we’ll handle the rest.",
-    },
-    {
-      id: 2,
-      heading: "Track Your Service in Real Time",
-      paragraph:
-        "Track your expert's arrival in real time with updates at every step for a smooth, stress-free experience.",
-    },
-  ];
 
   const handleNextPress = () => {
     if (currentIndex < content.length - 1) {
@@ -74,7 +75,7 @@ const Tutorial = () => {
       </Animated.View>
 
       {/* Modal for displaying content */}
-      <Modal animationType="fade" transparent visible>
+      <Modal animationType="slide" transparent visible>
         <View style={TutoialStyles.modalContainer}>
           <ScrollView pagingEnabled horizontal onScroll={handleScroll}>
             {content.map((item, index) => (

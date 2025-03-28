@@ -1,8 +1,8 @@
 //import liraries
 import colors from "@/constants/colors";
-import React, { Component } from "react";
-import { View, Text, StyleSheet, TouchableOpacity } from "react-native";
-import { RFValue as size } from "react-native-responsive-fontsize";
+import React from "react";
+import { Text, StyleSheet, TouchableOpacity } from "react-native";
+import { size } from "./Responsive";
 
 // create a component
 const PrimaryButton = ({ title, onSmash }) => {
@@ -16,7 +16,6 @@ const PrimaryButton = ({ title, onSmash }) => {
 // define your styles
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
     justifyContent: "center",
     alignItems: "center",
     backgroundColor: colors.primaryColor,

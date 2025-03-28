@@ -5,4 +5,7 @@ export default {
   lightGreen: "#36E0A2",
   activeDot: "#36E0A2",
   inactiveDot: "#E4E7EC",
+  input_borderColor: "#F2F4F7",
+  input_bgColor: "#F9FAFB",
+  lightBlue: "#B692F6",
 };

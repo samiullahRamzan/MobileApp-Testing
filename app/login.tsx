@@ -39,7 +39,9 @@ const Login = () => {
       />
 
       <Text style={LoginStyles.forgot}>Forgot password?</Text>
-      <PrimaryButton title={"Login"} onSmash={handlePress} />
+      <View style={{ marginTop: "7%" }}>
+        <PrimaryButton title={"Login"} onSmash={handlePress} />
+      </View>
     </View>
   );
 };

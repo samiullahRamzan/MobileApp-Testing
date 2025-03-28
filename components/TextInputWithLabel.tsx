@@ -19,6 +19,7 @@ const TextInputWithLabel = ({
       <View style={styles.input}>
         <Email />
         <TextInput
+          style={{ backgroundColor: "orange", width: "90%" }}
           placeholder={placeholder}
           onChangeText={onChange}
           keyboardType={keybtype}

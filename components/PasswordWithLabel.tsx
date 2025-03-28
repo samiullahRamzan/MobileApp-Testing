@@ -1,10 +1,17 @@
 //import liraries
-import React, { Component } from "react";
-import { View, Text, StyleSheet, TextInput } from "react-native";
+import React, { Component, useState } from "react";
+import {
+  View,
+  Text,
+  StyleSheet,
+  TextInput,
+  TouchableOpacity,
+} from "react-native";
 import colors from "@/constants/colors";
 import Lock from "./Icons/Lock";
 import EyeSlash from "./Icons/Eye-Slash";
 import { size } from "./Responsive";
+import Eye from "./Icons/Eye";
 // create a component
 const PasswordWithLabel = ({
   label,
@@ -13,6 +20,7 @@ const PasswordWithLabel = ({
   keybtype,
   value,
 }) => {
+  const [isVisible, setIsVisible] = useState(false);
   return (
     <View style={styles.container}>
       <Text style={styles.text}>{label}</Text>
@@ -26,14 +34,18 @@ const PasswordWithLabel = ({
         >
           <Lock />
           <TextInput
+            style={{ backgroundColor: "orange", width: "85%" }}
             placeholder={placeholder}
             value={value}
             onChangeText={onChange}
             keyboardType={keybtype}
-            secureTextEntry={true}
+            secureTextEntry={isVisible}
           />
         </View>
-        <EyeSlash />
+
+        <TouchableOpacity onPress={() => setIsVisible(!isVisible)}>
+          {isVisible ? <EyeSlash /> : <Eye />}
+        </TouchableOpacity>
       </View>
     </View>
   );
@@ -58,7 +70,7 @@ const styles = StyleSheet.create({
     borderWidth: 2,
     paddingHorizontal: "3%",
     backgroundColor: colors.input_bgColor,
-    justifyContent: "space-between",
+    // justifyContent: "space-between",
   },
 });
 

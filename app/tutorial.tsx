@@ -12,7 +12,7 @@ import Logo from "@/components/Icons/Logo";
 import { TutoialStyles } from "@/Styles/Styles";
 import PrimaryButton from "@/components/PrimaryButton";
 import { useRouter } from "expo-router";
-import { Responsive_w } from "@/components/ResponsiveWidth_height";
+import { wp } from "@/components/Responsive";
 
 const { height: SCREEN_HEIGHT } = Dimensions.get("window");
 const modalHeight = SCREEN_HEIGHT * 0.44;
@@ -54,7 +54,7 @@ const Tutorial = () => {
 
   const handleScroll = (event) => {
     const contentOffsetX = event.nativeEvent.contentOffset.x;
-    const viewWidth = Responsive_w(0.9);
+    const viewWidth = wp("90%");
     const currentIndex = Math.round(contentOffsetX / viewWidth);
     setCurrentIndex(currentIndex);
   };

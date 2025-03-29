@@ -5,10 +5,15 @@ import { Text, StyleSheet, TouchableOpacity } from "react-native";
 import { size } from "./Responsive";
 
 // create a component
-const PrimaryButton = ({ title, onSmash }) => {
+const PrimaryButton = ({
+  title,
+  onSmash,
+  buttonStyle = {},
+  textStyle = {},
+}) => {
   return (
-    <TouchableOpacity style={styles.container} onPress={onSmash}>
-      <Text style={styles.title}>{title}</Text>
+    <TouchableOpacity style={[styles.container, buttonStyle]} onPress={onSmash}>
+      <Text style={[styles.title, textStyle]}>{title}</Text>
     </TouchableOpacity>
   );
 };
@@ -19,7 +24,7 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     alignItems: "center",
     backgroundColor: colors.primaryColor,
-    paddingVertical: "5%",
+    paddingVertical: "4%",
     borderRadius: 86.71,
   },
   title: {

@@ -1,11 +1,12 @@
 //import liraries
 import React, { useState } from "react";
-import { View, Text } from "react-native";
+import { View, Text, TouchableOpacity } from "react-native";
 import { LoginStyles } from "@/Styles/Styles";
 import TextInputWithLabel from "@/components/TextInputWithLabel";
 import PasswordWithLabel from "@/components/PasswordWithLabel";
 import PrimaryButton from "@/components/PrimaryButton";
-import { useRouter } from "expo-router";
+import { useRouter, Link } from "expo-router";
+import NavigateTo from "@/components/navigateTo";
 
 // create a component
 const Login = () => {
@@ -38,10 +39,18 @@ const Login = () => {
         keybtype="email-address"
       />
 
-      <Text style={LoginStyles.forgot}>Forgot password?</Text>
-      <View style={{ marginTop: "7%" }}>
+      <Link href={"/forgot_password"}>
+        <Text style={LoginStyles.forgot}>Forgot password?</Text>
+      </Link>
+      <View style={{ marginTop: "7%", marginBottom: "5%" }}>
         <PrimaryButton title={"Login"} onSmash={handlePress} />
       </View>
+
+      <NavigateTo
+        href={"/register"}
+        navigationName="Register"
+        label="New to Wheely?"
+      />
     </View>
   );
 };

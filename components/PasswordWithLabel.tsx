@@ -10,7 +10,7 @@ import {
 import colors from "@/constants/colors";
 import Lock from "./Icons/Lock";
 import EyeSlash from "./Icons/Eye-Slash";
-import { size } from "./Responsive";
+import { size, wp } from "./Responsive";
 import Eye from "./Icons/Eye";
 // create a component
 const PasswordWithLabel = ({
@@ -29,12 +29,13 @@ const PasswordWithLabel = ({
           style={{
             flexDirection: "row",
             alignItems: "center",
+            justifyContent: "center",
             gap: "2%",
           }}
         >
           <Lock />
           <TextInput
-            style={{ backgroundColor: "orange", width: "85%" }}
+            style={{ width: wp("70%") }}
             placeholder={placeholder}
             value={value}
             onChangeText={onChange}

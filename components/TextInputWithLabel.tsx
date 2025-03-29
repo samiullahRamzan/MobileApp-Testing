@@ -5,6 +5,8 @@ import { RFValue as size } from "react-native-responsive-fontsize";
 import Email from "./Icons/Email";
 import { Responsive_h, Responsive_w } from "./ResponsiveWidth_height";
 import colors from "@/constants/colors";
+import { wp } from "./Responsive";
+import Profile from "./Icons/Profile";
 // create a component
 const TextInputWithLabel = ({
   label,
@@ -17,9 +19,9 @@ const TextInputWithLabel = ({
     <View style={styles.container}>
       <Text style={styles.text}>{label}</Text>
       <View style={styles.input}>
-        <Email />
+        {label === "Full Name*" ? <Profile /> : <Email />}
         <TextInput
-          style={{ backgroundColor: "orange", width: "90%" }}
+          style={{ width: wp("75%") }}
           placeholder={placeholder}
           onChangeText={onChange}
           keyboardType={keybtype}

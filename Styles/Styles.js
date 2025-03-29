@@ -1,7 +1,4 @@
-import {
-  Responsive_h,
-  Responsive_w,
-} from "@/components/ResponsiveWidth_height";
+import { hp, wp } from "@/components/Responsive";
 import colors from "@/constants/colors";
 import { StyleSheet } from "react-native";
 import { RFValue as size } from "react-native-responsive-fontsize";
@@ -33,7 +30,7 @@ export const TutoialStyles = StyleSheet.create({
     paddingVertical: "3%",
   },
   outerView: {
-    width: Responsive_w(0.9),
+    width: wp("90%"),
     alignItems: "center",
     paddingHorizontal: "2%",
     paddingVertical: "2%",
@@ -61,14 +58,14 @@ export const TutoialStyles = StyleSheet.create({
     gap: "2%",
   },
   activeDot: {
-    width: Responsive_w(0.11),
-    height: Responsive_h(0.015),
+    width: wp("11%"),
+    height: hp("1.5%"),
     borderRadius: 86.71,
     backgroundColor: colors.activeDot,
   },
   inactiveDot: {
-    width: Responsive_w(0.04),
-    height: Responsive_h(0.02),
+    width: wp("4%"),
+    height: hp("2%"),
     borderRadius: 86.71,
     backgroundColor: colors.inactiveDot,
   },
@@ -100,5 +97,74 @@ export const LoginStyles = StyleSheet.create({
     color: colors.lightBlue,
     marginTop: "3%",
     alignSelf: "flex-end",
+  },
+  outer: {
+    flexDirection: "row",
+    alignSelf: "center",
+    alignItems: "center",
+  },
+  newToWheely: {
+    fontFamily: "u-regular",
+    fontSize: size(16),
+  },
+  login: {
+    fontFamily: "u-regular",
+    color: colors.lightGreen,
+  },
+});
+
+// define your styles
+export const RegisterStyles = StyleSheet.create({
+  backbtnView: {
+    flexDirection: "row",
+    gap: "2%",
+    alignItems: "center",
+    marginTop: wp("5%"),
+  },
+  backbtnText: {
+    color: colors.lightBlue500,
+    fontFamily: "u-regular",
+    fontWeight: 500,
+    fontSize: size(16),
+  },
+  TermsOuterView: {
+    marginTop: "7%",
+    flexDirection: "row",
+    gap: "2%",
+    alignItems: "center",
+  },
+  TermsText: {
+    fontSize: size(13),
+    fontWeight: 400,
+    fontFamily: "u-regular",
+  },
+});
+
+// define your styles
+export const SuccessStyle = StyleSheet.create({
+  container: {
+    flex: 1,
+    justifyContent: "center",
+    alignItems: "center",
+    backgroundColor: colors.primaryColor,
+  },
+  outer: {
+    gap: "2%",
+    alignItems: "center",
+    justifyContent: "center",
+  },
+  heading: {
+    fontSize: size(20),
+    color: "white",
+    fontFamily: "u-bold",
+    fontWeight: 600,
+  },
+  p: {
+    fontSize: size(20),
+    color: "white",
+    fontFamily: "u-regular",
+    fontWeight: 400,
+    fontSize: size(14),
+    textAlign: "center",
   },
 });

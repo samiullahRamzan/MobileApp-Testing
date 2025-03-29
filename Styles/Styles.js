@@ -136,6 +136,12 @@ export const RegisterStyles = StyleSheet.create({
     fontWeight: 400,
     fontFamily: "u-regular",
   },
+  notchecked: {
+    width: wp("4%"),
+    height: hp("2%"),
+    borderRadius: 5,
+    borderWidth: 1,
+  },
 });
 
 // define your styles

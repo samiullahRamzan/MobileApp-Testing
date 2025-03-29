@@ -8,7 +8,14 @@ import colors from "@/constants/colors";
 import { LoginStyles, RegisterStyles } from "@/Styles/Styles";
 import { Link, useRouter } from "expo-router";
 import React, { useState } from "react";
-import { View, Text, TouchableOpacity } from "react-native";
+import {
+  View,
+  Text,
+  TouchableOpacity,
+  Touchable,
+  KeyboardAvoidingView,
+  ScrollView,
+} from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import SquareCheck from "react-native-vector-icons/FontAwesome";
 
@@ -18,6 +25,9 @@ const Register = () => {
   const [Email, setEmail] = useState("");
   const [Password, setPassword] = useState("");
   const [ConfirmPassword, setConfirmPassword] = useState("");
+  const [isChecked, setIsChecked] = useState(false);
+
+  console.log("here is password value", Password);
 
   const router = useRouter();
 
@@ -25,84 +35,96 @@ const Register = () => {
     router.push("/success");
   };
   return (
-    <SafeAreaView
-      style={{ ...LoginStyles.container, paddingHorizontal: wp("4%") }}
-    >
-      {/* backbutton */}
-      <BackButton router={router} />
+    <ScrollView style={{ flex: 1 }}>
+      <SafeAreaView
+        style={{ ...LoginStyles.container, paddingHorizontal: wp("4%") }}
+      >
+        {/* backbutton */}
+        <BackButton router={router} />
 
-      {/* heading */}
-      <Text style={{ ...LoginStyles.heading, marginTop: "10%" }}>
-        Create Account
-      </Text>
-      <Text style={LoginStyles.paragraph}>
-        Get the most out of your stay with a personalized experience by signing
-        up today.
-      </Text>
-
-      {/* Full Name */}
-      <TextInputWithLabel
-        label="Andrew*"
-        value={FullName}
-        placeholder="andrew_ainsley@yourdomain.com"
-        onChange={(value) => setFullName(value)}
-        keybtype="email-address"
-      />
-
-      <TextInputWithLabel
-        label="Email*"
-        value={Email}
-        placeholder="andrew_ainsley@yourdomain.com"
-        onChange={(value) => setEmail(value)}
-        keybtype="email-address"
-      />
-
-      <PasswordWithLabel
-        label="Password*"
-        value={Password}
-        placeholder="***************"
-        onChange={(value) => setPassword(value)}
-        keybtype="email-address"
-      />
-
-      <PasswordWithLabel
-        label="Confirm Password*"
-        value={ConfirmPassword}
-        placeholder="***************"
-        onChange={(value) => setConfirmPassword(value)}
-        keybtype="email-address"
-      />
-
-      <View style={RegisterStyles.TermsOuterView}>
-        <SquareCheck
-          name="check-square"
-          size={wp("4%")}
-          style={{ color: colors.lightGreen }}
-        />
-        <Text style={RegisterStyles.TermsText}>
-          Accept to
-          <Link href={"/"}>
-            <Text style={{ color: colors.lightBlue500 }}> Privacy Policy </Text>
-          </Link>
-          and
-          <Link href={"/"}>
-            <Text style={{ color: colors.lightBlue500 }}>
-              Terms & conditions
-            </Text>
-          </Link>
+        {/* heading */}
+        <Text style={{ ...LoginStyles.heading, marginTop: "10%" }}>
+          Create Account
         </Text>
-      </View>
+        <Text style={LoginStyles.paragraph}>
+          Get the most out of your stay with a personalized experience by
+          signing up today.
+        </Text>
 
-      <View style={{ marginTop: "7%", marginBottom: "5%" }}>
-        <PrimaryButton title={"Register"} onSmash={handlePress} />
-      </View>
+        {/* Full Name */}
+        <TextInputWithLabel
+          label="Andrew*"
+          value={FullName}
+          placeholder="andrew_ainsley@yourdomain.com"
+          onChange={(value) => setFullName(value)}
+          keybtype="email-address"
+        />
 
-      <NavigateTo
-        href={"/login"}
-        navigationName="Login"
-        label="Already have an account?"
-      />
-    </SafeAreaView>
+        <TextInputWithLabel
+          label="Email*"
+          value={Email}
+          placeholder="andrew_ainsley@yourdomain.com"
+          onChange={(value) => setEmail(value)}
+          keybtype="email-address"
+          containerStyle={{ marginTop: "3%" }}
+        />
+
+        <PasswordWithLabel
+          label="Password*"
+          value={Password}
+          placeholder="***************"
+          onChange={(value) => setPassword(value)}
+          keybtype="email-address"
+        />
+
+        <PasswordWithLabel
+          label="Confirm Password*"
+          value={ConfirmPassword}
+          placeholder="***************"
+          onChange={(value) => setConfirmPassword(value)}
+          keybtype="email-address"
+        />
+
+        <View style={RegisterStyles.TermsOuterView}>
+          <TouchableOpacity onPress={() => setIsChecked(!isChecked)}>
+            {isChecked ? (
+              <SquareCheck
+                name="check-square"
+                size={wp("4.7%")}
+                style={{ color: colors.lightGreen }}
+              />
+            ) : (
+              <View style={RegisterStyles.notchecked}></View>
+            )}
+          </TouchableOpacity>
+          <Text style={RegisterStyles.TermsText}>
+            Accept to
+            <Link href={"/"}>
+              <Text style={{ color: colors.lightBlue500 }}>
+                {" "}
+                Privacy Policy{" "}
+              </Text>
+            </Link>
+            and
+            <Link href={"/"}>
+              <Text style={{ color: colors.lightBlue500 }}>
+                Terms & conditions
+              </Text>
+            </Link>
+          </Text>
+        </View>
+
+        <View style={{ marginTop: "7%", marginBottom: "5%" }}>
+          <PrimaryButton title={"Register"} onSmash={handlePress} />
+        </View>
+
+        <NavigateTo
+          href={"/login"}
+          navigationName="Login"
+          label="Already have an account?"
+        />
+      </SafeAreaView>
+    </ScrollView>
   );
 };
 

@@ -13,6 +13,7 @@ const Login = () => {
   const [Email, setEmail] = useState("");
   const [Password, setPassword] = useState("");
   const router = useRouter();
+
   const handlePress = () => {
     router.push("/login");
   };

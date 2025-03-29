@@ -3,10 +3,10 @@ import React, { Component } from "react";
 import { View, Text, StyleSheet, TextInput } from "react-native";
 import { RFValue as size } from "react-native-responsive-fontsize";
 import Email from "./Icons/Email";
-import { Responsive_h, Responsive_w } from "./ResponsiveWidth_height";
 import colors from "@/constants/colors";
 import { wp } from "./Responsive";
 import Profile from "./Icons/Profile";
+
 // create a component
 const TextInputWithLabel = ({
   label,
@@ -14,9 +14,10 @@ const TextInputWithLabel = ({
   onChange,
   keybtype,
   value,
+  containerStyle,
 }) => {
   return (
-    <View style={styles.container}>
+    <View style={[styles.container, containerStyle]}>
       <Text style={styles.text}>{label}</Text>
       <View style={styles.input}>
         {label === "Full Name*" ? <Profile /> : <Email />}

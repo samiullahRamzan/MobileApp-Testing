@@ -21,6 +21,7 @@ const PasswordWithLabel = ({
   value,
 }) => {
   const [isVisible, setIsVisible] = useState(false);
+
   return (
     <View style={styles.container}>
       <Text style={styles.text}>{label}</Text>
@@ -39,7 +40,6 @@ const PasswordWithLabel = ({
             placeholder={placeholder}
             value={value}
             onChangeText={onChange}
-            keyboardType={keybtype}
             secureTextEntry={isVisible}
           />
         </View>

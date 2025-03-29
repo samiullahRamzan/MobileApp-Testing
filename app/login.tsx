@@ -39,8 +39,10 @@ const Login = () => {
         keybtype="email-address"
       />
 
-      <Link href={"/forgot_password"}>
-        <Text style={LoginStyles.forgot}>Forgot password?</Text>
+      <Link href={"/forgot_password"} asChild>
+        <TouchableOpacity style={{ marginTop: "3%", alignSelf: "flex-end" }}>
+          <Text style={LoginStyles.forgot}>Forgot password?</Text>
+        </TouchableOpacity>
       </Link>
       <View style={{ marginTop: "7%", marginBottom: "5%" }}>
         <PrimaryButton title={"Login"} onSmash={handlePress} />

@@ -95,8 +95,6 @@ export const LoginStyles = StyleSheet.create({
     fontWeight: 600,
     fontSize: size(14),
     color: colors.lightBlue,
-    marginTop: "3%",
-    alignSelf: "flex-end",
   },
   outer: {
     flexDirection: "row",
@@ -168,3 +166,6 @@ export const SuccessStyle = StyleSheet.create({
     textAlign: "center",
   },
 });
+
+// define your styles
+export const styles = StyleSheet.create({});

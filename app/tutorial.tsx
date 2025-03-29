@@ -43,10 +43,17 @@ const Tutorial = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const contentPosition = useRef(new Animated.Value(0)).current;
   const router = useRouter();
-
+  const scrollViewRef = useRef(null);
   const handleNextPress = () => {
     if (currentIndex < content.length - 1) {
-      setCurrentIndex(currentIndex + 1);
+      const newIndex = currentIndex + 1;
+      setCurrentIndex(newIndex);
+
+      // Scroll to the next item
+      scrollViewRef.current?.scrollTo({
+        x: wp("90%") * newIndex,
+        animated: true,
+      });
     } else {
       router.push("/login");
     }
@@ -77,14 +84,25 @@ const Tutorial = () => {
       {/* Modal for displaying content */}
       <Modal animationType="slide" transparent visible>
         <View style={TutoialStyles.modalContainer}>
-          <ScrollView pagingEnabled horizontal onScroll={handleScroll}>
-            {content.map((item, index) => (
-              <View key={index} style={TutoialStyles.outerView}>
-                <Text style={TutoialStyles.heading}>{item.heading}</Text>
-                <Text style={TutoialStyles.paragraph}>{item.paragraph}</Text>
-              </View>
-            ))}
-          </ScrollView>
+          <View
+            style={{
+              width: wp("90%"),
+            }}
+          >
+            <ScrollView
+              pagingEnabled
+              horizontal
+              onScroll={handleScroll}
+              ref={scrollViewRef}
+            >
+              {content.map((item, index) => (
+                <View key={index} style={TutoialStyles.outerView}>
+                  <Text style={TutoialStyles.heading}>{item.heading}</Text>
+                  <Text style={TutoialStyles.paragraph}>{item.paragraph}</Text>
+                </View>
+              ))}
+            </ScrollView>
+          </View>
 
           <View style={TutoialStyles.dotContainer}>
             {content.map((_, index) => (

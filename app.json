@@ -4,7 +4,7 @@
     "slug": "MobileApp_Testing",
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/images/icon.png",
+    "icon": "./assets/images/logopng.png",
     "scheme": "myapp",
     "userInterfaceStyle": "automatic",
     "newArchEnabled": true,
@@ -13,8 +13,8 @@
     },
     "android": {
       "adaptiveIcon": {
-        "foregroundImage": "./assets/images/adaptive-icon.png",
-        "backgroundColor": "#ffffff"
+        "foregroundImage": "./assets/images/logopng.png",
+        "backgroundColor": "#6100D0"
       }
     },
     "web": {
@@ -27,7 +27,7 @@
       [
         "expo-splash-screen",
         {
-          "image": "./assets/images/logo.svg",
+          "image": "./assets/images/logopng.png",
           "imageWidth": 200,
           "resizeMode": "contain",
           "backgroundColor": "#6100D0"

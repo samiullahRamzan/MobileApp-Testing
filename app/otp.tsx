@@ -21,8 +21,6 @@ const OTP = () => {
     // Auto-focus next input
     if (text && index < 3) {
       inputRefs.current[index + 1].focus();
-    } else {
-      inputRefs.current[index - 1].focus();
     }
   };
 

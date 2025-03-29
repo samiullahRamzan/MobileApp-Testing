@@ -31,10 +31,6 @@ export const TutoialStyles = StyleSheet.create({
   },
   outerView: {
     width: wp("90%"),
-    alignItems: "center",
-    paddingHorizontal: "2%",
-    paddingVertical: "2%",
-    justifyContent: "center",
   },
   heading: {
     fontFamily: "p-bold",
@@ -54,7 +50,8 @@ export const TutoialStyles = StyleSheet.create({
     flexDirection: "row",
     alignItems: "center",
     justifyContent: "center",
-    marginBottom: "2%",
+    marginBottom: "4%",
+    marginTop: "4%",
     gap: "2%",
   },
   activeDot: {

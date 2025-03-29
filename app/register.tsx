@@ -35,7 +35,7 @@ const Register = () => {
     router.push("/success");
   };
   return (
-    <ScrollView style={{ flex: 1 }}>
+    <ScrollView contentContainerStyle={{ flex: 1 }}>
       <SafeAreaView
         style={{ ...LoginStyles.container, paddingHorizontal: wp("4%") }}
       >

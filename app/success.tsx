@@ -15,7 +15,6 @@ const SUCCESS_TYPES = {
     icon: SuccessSVG,
     message: "Your password has been updated successfully!",
     btnTitle: "Login",
-    navigateTo: "/login",
   },
   ACCOUNT_CREATION: {
     icon: ProfileSuccess,
@@ -23,7 +22,6 @@ const SUCCESS_TYPES = {
     message:
       "Your profile has been created please enter your credentials to login",
     btnTitle: "Let's Start",
-    navigateTo: "/",
   },
   // Add more types as needed
 };
@@ -61,13 +59,13 @@ const Success = () => {
       <View style={{ marginTop: "7%" }}>
         <PrimaryButton
           title={successType.btnTitle}
-          onSmash={() => router.push(successType.navigateTo)}
+          onSmash={() => router.push("/login")}
           buttonStyle={{
-            backgroundColor: "white", // Custom background
-            width: wp("86%"), // Custom width
+            backgroundColor: "white",
+            width: wp("86%"),
           }}
           textStyle={{
-            color: colors.primaryColor, // Custom text color
+            color: colors.primaryColor,
           }}
         />
       </View>

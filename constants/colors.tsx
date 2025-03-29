@@ -9,4 +9,5 @@ export default {
   input_bgColor: "#F9FAFB",
   lightBlue: "#B692F6",
   lightBlue500: "#0BA5EC",
+  grey100: "#F2F4F7",
 };

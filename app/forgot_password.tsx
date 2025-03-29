@@ -37,7 +37,7 @@ const ForgotPassword = () => {
       />
 
       <View style={{ marginTop: "7%", marginBottom: "5%" }}>
-        <PrimaryButton title={"Login"} onSmash={handlePress} />
+        <PrimaryButton title={"Next"} onSmash={handlePress} />
       </View>
     </View>
   );

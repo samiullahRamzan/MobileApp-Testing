@@ -14,7 +14,13 @@ const NewPassword = () => {
   const router = useRouter();
 
   const handlePress = () => {
-    router.push("/success");
+    console.log("here is handle press");
+    router.push({
+      pathname: "/success",
+      params: {
+        screenName: "new_password",
+      },
+    });
   };
   return (
     <View style={LoginStyles.container}>

@@ -147,32 +147,22 @@ export const SuccessStyle = StyleSheet.create({
     backgroundColor: colors.primaryColor,
   },
   outer: {
-    gap: "2%",
     alignItems: "center",
     justifyContent: "center",
+    marginTop: "5%",
   },
   heading: {
     fontSize: size(20),
     color: "white",
     fontFamily: "u-bold",
     fontWeight: 600,
+    marginBottom: "1%",
   },
   p: {
-    fontSize: size(20),
     color: "white",
     fontFamily: "u-regular",
     fontWeight: 400,
-    fontSize: size(14),
+    fontSize: size(18),
     textAlign: "center",
-  },
-});
-
-// define your styles
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: "center",
-    alignItems: "center",
-    backgroundColor: "#2c3e50",
   },
 });

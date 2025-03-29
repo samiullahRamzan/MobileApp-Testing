@@ -1,7 +1,7 @@
 import * as React from "react";
 import Svg, { Circle, Path } from "react-native-svg";
 
-function Success(props) {
+function SuccessSVG(props) {
   return (
     <Svg
       width={101}
@@ -23,4 +23,4 @@ function Success(props) {
   );
 }
 
-export default Success;
+export default SuccessSVG;

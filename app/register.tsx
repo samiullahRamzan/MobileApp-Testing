@@ -53,9 +53,9 @@ const Register = () => {
 
         {/* Full Name */}
         <TextInputWithLabel
-          label="Andrew*"
+          label="Full Name*"
           value={FullName}
-          placeholder="andrew_ainsley@yourdomain.com"
+          placeholder="Andrew"
           onChange={(value) => setFullName(value)}
           keybtype="email-address"
         />

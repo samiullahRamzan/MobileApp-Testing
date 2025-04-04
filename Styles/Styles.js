@@ -103,7 +103,7 @@ export const LoginStyles = StyleSheet.create({
     fontSize: size(16),
   },
   login: {
-    fontFamily: "u-regular",
+    fontFamily: "u-semiBold",
     color: colors.lightGreen,
   },
 });

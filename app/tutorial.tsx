@@ -12,7 +12,7 @@ import Logo from "@/components/Icons/Logo";
 import { TutoialStyles } from "@/Styles/Styles";
 import PrimaryButton from "@/components/PrimaryButton";
 import { useRouter } from "expo-router";
-import { wp } from "@/components/Responsive";
+import { hp, wp } from "@/components/Responsive";
 
 const { height: SCREEN_HEIGHT } = Dimensions.get("window");
 const modalHeight = SCREEN_HEIGHT * 0.44;
@@ -47,6 +47,7 @@ const Tutorial = () => {
   const handleNextPress = () => {
     if (currentIndex < content.length - 1) {
       const newIndex = currentIndex + 1;
+      console.log("here is currentIndex in handle next press button", newIndex);
       setCurrentIndex(newIndex);
 
       // Scroll to the next item
@@ -63,6 +64,7 @@ const Tutorial = () => {
     const contentOffsetX = event.nativeEvent.contentOffset.x;
     const viewWidth = wp("90%");
     const currentIndex = Math.round(contentOffsetX / viewWidth);
+    console.log("here is currentIndex in handle scroll", currentIndex);
     setCurrentIndex(currentIndex);
   };
 
@@ -78,7 +80,7 @@ const Tutorial = () => {
     <SafeAreaView style={TutoialStyles.container}>
       {/* Logo */}
       <Animated.View style={{ transform: [{ translateY: contentPosition }] }}>
-        <Logo />
+        <Logo width={wp("30%")} height={hp("15%")} />
       </Animated.View>
 
       {/* Modal for displaying content */}
@@ -92,7 +94,7 @@ const Tutorial = () => {
             <ScrollView
               pagingEnabled
               horizontal
-              onScroll={handleScroll}
+              onMomentumScrollEnd={handleScroll}
               ref={scrollViewRef}
             >
               {content.map((item, index) => (
